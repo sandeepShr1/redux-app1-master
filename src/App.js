@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchData } from './redux/actions/action';
+import React from 'react'
+import Products from './components/Products/Products';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from './components/Navbar/Navbar';
+import Cart from './components/Cart/Cart';
+import NotFound from './components/NotFound'
 
 const App = () => {
-  const products = useSelector(state => state.data.products)
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-
-    dispatch(fetchData())
-
-  }, [])
-
   return (
-    <div>
-      {JSON.stringify(products)}
-
+    <div >
+      <Router  >
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
     </div>
   )
 }
