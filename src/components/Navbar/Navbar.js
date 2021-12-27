@@ -1,24 +1,26 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { GiHamburgerMenu } from 'react-icons/gi';
 
 
 const Navbar = () => {
-
     return (
-        <nav>
-            <input type="checkbox" id="check" />
-            <label htmlFor="check" className="checkbtn">
-                <GiHamburgerMenu/>
-            </label>
-            <label className="logo">Store</label>
-            <ul>
-                <li><a className="active" href="#">Home</a></li>
-                <li><a htmlFor="check" href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Feedback</a></li>
-            </ul>
+        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+            <div className="container-fluid">
+                <Link className="navbar-brand" to="/" id='logo'>Store</Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                            <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/cart">Cart</NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     )
 }
