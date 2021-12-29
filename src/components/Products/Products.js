@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchData } from '../../redux/actions/action';
+import Filter from './Filter/Filter';
 
 const Products = () => {
     const products = useSelector(state => state.data.products);
@@ -12,6 +13,7 @@ const Products = () => {
     return (
         <div className="product">
         <h3>Products</h3>
+        <Filter />
         <section className='grid'>
             {products.map((product) => {
                 return <div className='items' key={product.id}>

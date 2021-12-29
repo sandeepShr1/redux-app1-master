@@ -1,0 +1,18 @@
+.filter {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.filter-result{
+    font-size: 1.2em;
+}
+.filter-sort{
+
+}
+
+.filter-size{
+
+}

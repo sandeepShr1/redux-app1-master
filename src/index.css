@@ -90,6 +90,15 @@ body {
   color     : #1289A7;
 }
 
+@media (max-width: 1240px) {
+
+  .grid {
+    display              : grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin               : 5px 3px;
+  }
+}
+
 @media (max-width: 1024px) {
   #logo {
     font-size: 28px !important;
